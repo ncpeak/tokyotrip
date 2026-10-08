@@ -3,73 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5f0">
+  <meta name="theme-color" content="#F7F5FA">
   <meta id="page-description" name="description" content="ร้านอาหารและคำแนะนำที่คัดจากเอกสารทริปญี่ปุ่น โดย Japan Planner by Anya">
   <title>ร้านอร่อยระหว่างทริป | Japan Planner by Anya</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #222820;
-      --muted: #777b72;
-      --paper: #f7f5f0;
-      --card: #fffefa;
-      --line: #e8e5dc;
-      --green: #51466b;
-      --green-soft: #f3f0f9;
-      --orange: #75628f;
-      --orange-soft: #f4f1f9;
-      --purple-brand: #CBC3E3;
+      --ink: #332c40;
+      --muted: #777184;
+      --paper: #F7F5FA;
+      --card: #fffefe;
+      --line: #e6dfed;
+      --purple-ink: #51466b;
+      --purple-soft: #f2eff8;
+      --lavender: #CBC3E3;
+      --lavender-mid: #BDB5D5;
+      --mauve: #D8BFD8;
+      --mauve-soft: #f5eef6;
+      --purple-accent: #75628f;
       --gold: #b18a39;
-      --shadow: 0 16px 40px rgba(43, 47, 38, .055);
+      --shadow: 0 16px 40px rgba(65, 52, 83, .07);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 96px; }
     body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif; -webkit-font-smoothing: antialiased; }
     a { color: inherit; }
     .shell { max-width: 1080px; margin: 0 auto; padding: 0 20px 72px; }
-    .topbar { height: 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(52,75,59,.12); }
-    .brand { display: flex; gap: 10px; align-items: center; color: var(--green); font-size: 12px; font-weight: 750; letter-spacing: .1em; }
-    .brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--purple-brand); border-radius: 50%; color: var(--green); background: var(--purple-brand); font-family: Georgia, serif; font-size: 18px; letter-spacing: 0; }
+    .topbar { height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid rgba(189,181,213,.3); background: transparent; }
+    .brand { display: flex; align-items: center; color: var(--purple-ink); font-size: 12px; font-weight: 750; letter-spacing: .1em; }
     .top-note { color: var(--muted); font-size: 12px; }
-    .language-switch { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+    .language-switch { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--lavender-mid); border-radius: 999px; background: var(--card); }
     .language-switch button { border: 0; border-radius: 999px; padding: 6px 10px; color: var(--muted); background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
-    .language-switch button[aria-pressed="true"] { color: white; background: var(--green); }
-    .language-switch button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+    .language-switch button[aria-pressed="true"] { color: var(--purple-ink); background: var(--lavender); }
+    .language-switch button:focus-visible { outline: 2px solid var(--purple-accent); outline-offset: 2px; }
     [hidden] { display: none !important; }
-    .hero { padding: 42px 0 28px; }
-    .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--orange); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .hero { margin: 18px 0 15px; padding: 30px 24px 26px; border: 1px solid rgba(189,181,213,.62); border-radius: 16px; background: linear-gradient(125deg, rgba(203,195,227,.44), rgba(216,191,216,.34)); }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--purple-accent); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; }
     h1 { margin: 12px 0 9px; font-family: Georgia, "Noto Serif Thai", serif; font-size: clamp(30px, 6vw, 48px); line-height: 1.2; font-weight: 500; letter-spacing: -.035em; }
     .hero-copy { max-width: 620px; margin: 0; color: #686d63; font-size: 14px; line-height: 1.8; }
     .hero-foot { margin-top: 20px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; }
-    .hero-foot strong { color: var(--green); font-size: 13px; font-weight: 650; }
-    .dot { width: 3px; height: 3px; border-radius: 100%; background: #b1b3aa; }
-    .controls { position: sticky; z-index: 5; top: 0; margin: 0 -20px; padding: 12px 20px; background: rgba(247,245,240,.94); backdrop-filter: blur(14px); border-top: 1px solid rgba(232,229,220,.7); border-bottom: 1px solid var(--line); }
+    .hero-foot strong { color: var(--purple-ink); font-size: 13px; font-weight: 650; }
+    .dot { width: 3px; height: 3px; border-radius: 100%; background: var(--lavender-mid); }
+    .controls { position: sticky; z-index: 5; top: 0; margin: 0 -20px; padding: 12px 20px; background: rgba(247,245,250,.94); backdrop-filter: blur(14px); border-top: 1px solid rgba(230,223,237,.7); border-bottom: 1px solid var(--line); }
     .control-inner { max-width: 1080px; margin: 0 auto; display: flex; gap: 12px; align-items: center; }
     .search { position: relative; flex: 1; min-width: 130px; }
-    .search svg { position: absolute; top: 50%; left: 14px; width: 17px; height: 17px; transform: translateY(-50%); color: #898d84; }
+    .search svg { position: absolute; top: 50%; left: 14px; width: 17px; height: 17px; transform: translateY(-50%); color: #81768e; }
     .search input { width: 100%; height: 42px; padding: 0 14px 0 40px; border: 1px solid var(--line); border-radius: 999px; outline: none; background: var(--card); color: var(--ink); font: inherit; font-size: 13px; }
-    .search input:focus { border-color: var(--purple-brand); box-shadow: 0 0 0 3px rgba(81,70,107,.1); }
+    .search input:focus { border-color: var(--lavender-mid); box-shadow: 0 0 0 3px rgba(81,70,107,.12); }
     .quick-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
     .quick-links::-webkit-scrollbar { display: none; }
-    .quick-links a { flex: 0 0 auto; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 10px 13px; color: #565c53; background: var(--card); font-size: 11px; font-weight: 650; transition: .2s ease; }
-    .quick-links a:hover { color: var(--green); border-color: #b5a9ce; background: var(--green-soft); }
+    .quick-links a { flex: 0 0 auto; text-decoration: none; border: 1px solid var(--lavender-mid); border-radius: 999px; padding: 10px 13px; color: var(--purple-ink); background: var(--card); font-size: 11px; font-weight: 650; transition: .2s ease; }
+    .quick-links a:hover { color: var(--purple-ink); border-color: var(--purple-accent); background: var(--mauve-soft); }
     main { padding-top: 30px; }
     .day-section { margin: 0 0 37px; }
     .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
-    .section-kicker { margin: 0 0 5px; color: var(--orange); font-size: 10px; letter-spacing: .12em; font-weight: 750; text-transform: uppercase; }
+    .section-kicker { margin: 0 0 5px; color: var(--purple-accent); font-size: 10px; letter-spacing: .12em; font-weight: 750; text-transform: uppercase; }
     h2 { margin: 0; font-family: Georgia, "Noto Serif Thai", serif; font-size: 23px; line-height: 1.35; font-weight: 500; }
     .section-date { color: var(--muted); text-align: right; font-size: 13px; line-height: 1.6; }
     .restaurant-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
     .restaurant-card { display: flex; flex-direction: column; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 15px; box-shadow: var(--shadow); }
-    .photos { position: relative; display: grid; width: 100%; flex: none; grid-template-columns: 1fr 1fr; gap: 2px; height: 190px; background: #ece9e1; }
+    .photos { position: relative; display: grid; width: 100%; flex: none; grid-template-columns: 1fr 1fr; gap: 2px; height: 190px; background: #eeeaf4; }
     .photos.single { grid-template-columns: 1fr; }
-    .photos::after { content: "แตะภาพเพื่อดูเต็ม"; position: absolute; right: 10px; bottom: 10px; z-index: 1; padding: 6px 9px; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; color: white; background: rgba(25,31,26,.72); font-size: 10px; line-height: 1.2; letter-spacing: .01em; pointer-events: none; }
+    .photos::after { content: "แตะภาพเพื่อดูเต็ม"; position: absolute; right: 10px; bottom: 10px; z-index: 1; padding: 6px 9px; border: 1px solid rgba(255,255,255,.34); border-radius: 999px; color: white; background: rgba(47,39,61,.78); font-size: 10px; line-height: 1.2; letter-spacing: .01em; pointer-events: none; }
     html[lang="ja"] .photos::after { content: "画像をタップして拡大"; }
     .photos img { width: 100%; height: 100%; min-width: 0; object-fit: cover; display: block; cursor: zoom-in; }
     .photos img:first-child:only-child { grid-column: 1 / -1; }
-    .photos img:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; }
-    .photo-viewer { position: fixed; inset: 0; z-index: 20; display: grid; width: 100vw; height: 100vh; grid-template-rows: auto minmax(0,1fr); gap: 4px; place-items: center; margin: 0; padding: 16px; overflow: hidden; border: 0; color: #fff; background: rgba(18,22,19,.96); }
+    .photos img:focus-visible { outline: 3px solid var(--purple-accent); outline-offset: -3px; }
+    .photo-viewer { position: fixed; inset: 0; z-index: 20; display: grid; width: 100vw; height: 100vh; grid-template-rows: auto minmax(0,1fr); gap: 4px; place-items: center; margin: 0; padding: 16px; overflow: hidden; border: 0; color: #fff; background: rgba(38,32,49,.96); }
     .photo-viewer-close { justify-self: end; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; color: #fff; background: rgba(255,255,255,.1); font: inherit; font-size: 25px; line-height: 1; cursor: pointer; }
     .photo-viewer figure { display: flex; min-width: 0; min-height: 0; flex-direction: column; align-items: center; justify-content: center; gap: 12px; margin: 0; }
     .photo-viewer-image { display: block; width: auto; height: auto; max-width: min(94vw, 1400px); max-height: 82vh; object-fit: contain; }
@@ -78,31 +79,31 @@
     .name-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
     .name { min-width: 0; overflow-wrap: anywhere; margin: 0; font-family: Georgia, "Noto Serif Thai", serif; font-size: 20px; line-height: 1.35; font-weight: 550; }
     .name-en { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
-    .price { flex: 0 0 auto; padding: 6px 9px; border-radius: 7px; color: var(--green); background: var(--green-soft); font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .price { flex: 0 0 auto; padding: 6px 9px; border-radius: 7px; color: var(--purple-ink); background: var(--lavender); font-size: 11px; font-weight: 700; white-space: nowrap; }
     .rating-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 0; }
-    .rating { display: inline-flex; gap: 5px; align-items: center; border: 1px solid #eeece5; border-radius: 6px; padding: 4px 7px; color: #62675e; font-size: 10px; }
+    .rating { display: inline-flex; gap: 5px; align-items: center; border: 1px solid var(--line); border-radius: 6px; padding: 4px 7px; color: #665f70; font-size: 10px; }
     .rating b { color: var(--ink); font-size: 11px; font-weight: 700; }
     .star { color: var(--gold); }
-    .description { display: block; clear: both; margin: 16px 0 0; color: #595f56; font-size: 14px; line-height: 1.95; overflow-wrap: anywhere; }
-    .detail-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; color: #70756c; font-size: 11px; line-height: 1.6; }
-    .detail-note svg { width: 15px; height: 15px; flex: 0 0 15px; margin-top: 1px; color: var(--orange); }
-    .menu-note { margin-top: 12px; padding: 10px 11px; border-radius: 8px; background: #f8f6f1; color: #5e635a; font-size: 11px; line-height: 1.65; }
+    .description { display: block; clear: both; margin: 16px 0 0; color: #514b5c; font-size: 14px; line-height: 1.95; overflow-wrap: anywhere; }
+    .detail-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; padding: 9px 10px; border-radius: 8px; color: #665f70; background: var(--mauve-soft); font-size: 11px; line-height: 1.6; }
+    .detail-note svg { width: 15px; height: 15px; flex: 0 0 15px; margin-top: 1px; color: var(--purple-accent); }
+    .menu-note { margin-top: 12px; padding: 10px 11px; border-radius: 8px; background: var(--mauve-soft); color: #514b5c; font-size: 11px; line-height: 1.65; }
     .menu-note strong { color: var(--ink); }
     .links { display: flex; gap: 8px; margin-top: 16px; }
-    .link-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 11px; border: 1px solid #ded7ec; border-radius: 7px; color: var(--green); background: #fff; text-decoration: none; font-size: 11px; font-weight: 700; transition: .18s ease; }
-    .link-button:hover { background: var(--green); color: white; border-color: var(--green); }
+    .link-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 11px; border: 1px solid var(--lavender-mid); border-radius: 7px; color: var(--purple-ink); background: var(--purple-soft); text-decoration: none; font-size: 11px; font-weight: 700; transition: .18s ease; }
+    .link-button:hover { background: var(--lavender-mid); color: var(--purple-ink); border-color: var(--lavender-mid); }
     .link-button svg { width: 13px; height: 13px; }
-    .muted-link { color: #a0a298; border-color: #eeece5; pointer-events: none; }
-    .unlisted { display: inline-flex; margin: 0 0 11px; padding: 5px 8px; border-radius: 5px; background: var(--orange-soft); color: var(--green); font-size: 10px; font-weight: 700; }
+    .muted-link { color: #8e8797; border-color: var(--line); pointer-events: none; }
+    .unlisted { display: inline-flex; margin: 0 0 11px; padding: 5px 8px; border-radius: 5px; background: var(--mauve); color: var(--purple-ink); font-size: 10px; font-weight: 700; }
     .empty { display:none; margin: 24px auto; padding: 26px; text-align: center; color: var(--muted); font-size: 13px; }
     footer { display: flex; justify-content: space-between; gap: 18px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.7; }
-    footer strong { color: var(--green); letter-spacing: .08em; }
+    footer strong { color: var(--purple-ink); letter-spacing: .08em; }
     @media (max-width: 700px) {
       .shell { padding: 0 16px 50px; }
       .topbar { height: 58px; }
       .top-note { display: none; }
       .language-switch button { padding: 6px 8px; }
-      .hero { padding: 31px 0 21px; }
+      .hero { margin: 14px 0 12px; padding: 23px 17px 19px; }
       .hero-copy { font-size: 13px; }
       .controls { margin: 0 -16px; padding: 10px 16px; }
       .control-inner { align-items: stretch; flex-direction: column; gap: 9px; }
@@ -128,7 +129,7 @@
 <body>
   <div class="shell">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">A</span><span>JAPAN PLANNER <span style="font-weight:450">BY ANYA</span></span></div>
+      <div class="brand"><span>JAPAN PLANNER <span style="font-weight:450">BY ANYA</span></span></div>
       <div class="top-note" data-i18n="headerNote">TOKYO · RESTAURANT GUIDE</div>
       <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel">
         <button type="button" data-language="th" aria-pressed="true">ไทย</button>
