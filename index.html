@@ -421,9 +421,6 @@
       });
     });
     photoViewerClose.addEventListener('click', closePhotoViewer);
-    photoViewer.addEventListener('click', event => {
-      if (event.target === photoViewer) closePhotoViewer();
-    });
     photoViewer.addEventListener('keydown', event => {
       if (event.key === 'Escape') closePhotoViewer();
     });
