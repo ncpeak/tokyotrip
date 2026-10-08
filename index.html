@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta id="page-description" name="description" content="ร้านอาหารและคำแนะนำที่คัดจากเอกสารทริปญี่ปุ่น โดย Japan Planner by Anya">
+  <title>ร้านอร่อยระหว่างทริป | Japan Planner by Anya</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #222820;
+      --muted: #777b72;
+      --paper: #f7f5f0;
+      --card: #fffefa;
+      --line: #e8e5dc;
+      --green: #344b3b;
+      --green-soft: #edf1eb;
+      --orange: #bd6046;
+      --orange-soft: #f7ebe5;
+      --gold: #b18a39;
+      --shadow: 0 16px 40px rgba(43, 47, 38, .055);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .shell { max-width: 1080px; margin: 0 auto; padding: 0 20px 72px; }
+    .topbar { height: 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(52,75,59,.12); }
+    .brand { display: flex; gap: 10px; align-items: center; color: var(--green); font-size: 12px; font-weight: 750; letter-spacing: .1em; }
+    .brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #cfd7cc; border-radius: 50%; font-family: Georgia, serif; font-size: 18px; letter-spacing: 0; }
+    .top-note { color: var(--muted); font-size: 12px; }
+    .language-switch { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+    .language-switch button { border: 0; border-radius: 999px; padding: 6px 10px; color: var(--muted); background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
+    .language-switch button[aria-pressed="true"] { color: white; background: var(--green); }
+    .language-switch button:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+    [hidden] { display: none !important; }
+    .hero { padding: 42px 0 28px; }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--orange); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; }
+    h1 { margin: 12px 0 9px; font-family: Georgia, "Noto Serif Thai", serif; font-size: clamp(30px, 6vw, 48px); line-height: 1.2; font-weight: 500; letter-spacing: -.035em; }
+    .hero-copy { max-width: 620px; margin: 0; color: #686d63; font-size: 14px; line-height: 1.8; }
+    .hero-foot { margin-top: 20px; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 12px; }
+    .hero-foot strong { color: var(--green); font-size: 13px; font-weight: 650; }
+    .dot { width: 3px; height: 3px; border-radius: 100%; background: #b1b3aa; }
+    .controls { position: sticky; z-index: 5; top: 0; margin: 0 -20px; padding: 12px 20px; background: rgba(247,245,240,.94); backdrop-filter: blur(14px); border-top: 1px solid rgba(232,229,220,.7); border-bottom: 1px solid var(--line); }
+    .control-inner { max-width: 1080px; margin: 0 auto; display: flex; gap: 12px; align-items: center; }
+    .search { position: relative; flex: 1; min-width: 130px; }
+    .search svg { position: absolute; top: 50%; left: 14px; width: 17px; height: 17px; transform: translateY(-50%); color: #898d84; }
+    .search input { width: 100%; height: 42px; padding: 0 14px 0 40px; border: 1px solid var(--line); border-radius: 999px; outline: none; background: var(--card); color: var(--ink); font: inherit; font-size: 13px; }
+    .search input:focus { border-color: #9eae9e; box-shadow: 0 0 0 3px rgba(52,75,59,.08); }
+    .quick-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+    .quick-links::-webkit-scrollbar { display: none; }
+    .quick-links a { flex: 0 0 auto; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 10px 13px; color: #565c53; background: var(--card); font-size: 11px; font-weight: 650; transition: .2s ease; }
+    .quick-links a:hover { color: var(--green); border-color: #bac6b8; background: var(--green-soft); }
+    main { padding-top: 30px; }
+    .day-section { margin: 0 0 37px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+    .section-kicker { margin: 0 0 5px; color: var(--orange); font-size: 10px; letter-spacing: .12em; font-weight: 750; text-transform: uppercase; }
+    h2 { margin: 0; font-family: Georgia, "Noto Serif Thai", serif; font-size: 23px; line-height: 1.35; font-weight: 500; }
+    .section-date { color: var(--muted); text-align: right; font-size: 13px; line-height: 1.6; }
+    .restaurant-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .restaurant-card { display: flex; flex-direction: column; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 15px; box-shadow: var(--shadow); }
+    .photos { position: relative; display: grid; width: 100%; flex: none; grid-template-columns: 1fr 1fr; gap: 2px; height: 190px; background: #ece9e1; }
+    .photos.single { grid-template-columns: 1fr; }
+    .photos img { width: 100%; height: 100%; min-width: 0; object-fit: cover; display: block; }
+    .photos img:first-child:only-child { grid-column: 1 / -1; }
+    .card-content { position: relative; z-index: 1; display: flow-root; flex: 1 0 auto; padding: 20px 20px 21px; background: var(--card); }
+    .name-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .name { min-width: 0; overflow-wrap: anywhere; margin: 0; font-family: Georgia, "Noto Serif Thai", serif; font-size: 20px; line-height: 1.35; font-weight: 550; }
+    .name-en { margin: 3px 0 0; color: var(--muted); font-size: 12px; line-height: 1.4; }
+    .price { flex: 0 0 auto; padding: 6px 9px; border-radius: 7px; color: var(--green); background: var(--green-soft); font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .rating-row { display: flex; flex-wrap: wrap; gap: 7px; margin: 12px 0 0; }
+    .rating { display: inline-flex; gap: 5px; align-items: center; border: 1px solid #eeece5; border-radius: 6px; padding: 4px 7px; color: #62675e; font-size: 10px; }
+    .rating b { color: var(--ink); font-size: 11px; font-weight: 700; }
+    .star { color: var(--gold); }
+    .description { display: block; clear: both; margin: 16px 0 0; color: #595f56; font-size: 14px; line-height: 1.95; overflow-wrap: anywhere; }
+    .detail-note { display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; color: #70756c; font-size: 11px; line-height: 1.6; }
+    .detail-note svg { width: 15px; height: 15px; flex: 0 0 15px; margin-top: 1px; color: var(--orange); }
+    .menu-note { margin-top: 12px; padding: 10px 11px; border-radius: 8px; background: #f8f6f1; color: #5e635a; font-size: 11px; line-height: 1.65; }
+    .menu-note strong { color: var(--ink); }
+    .links { display: flex; gap: 8px; margin-top: 16px; }
+    .link-button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 36px; padding: 0 11px; border: 1px solid #dce1d9; border-radius: 7px; color: var(--green); background: #fff; text-decoration: none; font-size: 11px; font-weight: 700; transition: .18s ease; }
+    .link-button:hover { background: var(--green); color: white; border-color: var(--green); }
+    .link-button svg { width: 13px; height: 13px; }
+    .muted-link { color: #a0a298; border-color: #eeece5; pointer-events: none; }
+    .unlisted { display: inline-flex; margin: 0 0 11px; padding: 5px 8px; border-radius: 5px; background: var(--orange-soft); color: #9a4b37; font-size: 10px; font-weight: 700; }
+    .empty { display:none; margin: 24px auto; padding: 26px; text-align: center; color: var(--muted); font-size: 13px; }
+    footer { display: flex; justify-content: space-between; gap: 18px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.7; }
+    footer strong { color: var(--green); letter-spacing: .08em; }
+    @media (max-width: 700px) {
+      .shell { padding: 0 16px 50px; }
+      .topbar { height: 58px; }
+      .top-note { display: none; }
+      .language-switch button { padding: 6px 8px; }
+      .hero { padding: 31px 0 21px; }
+      .hero-copy { font-size: 13px; }
+      .controls { margin: 0 -16px; padding: 10px 16px; }
+      .control-inner { align-items: stretch; flex-direction: column; gap: 9px; }
+      .search input { height: 40px; }
+      .quick-links { margin-right: -16px; padding-right: 16px; }
+      .quick-links a { padding: 8px 11px; }
+      .description { font-size: 14px; line-height: 1.95; }
+      main { padding-top: 25px; }
+      .restaurant-grid { grid-template-columns: 1fr; gap: 13px; }
+      .photos { height: 205px; }
+      .card-content { padding: 18px 17px 19px; }
+      .section-head { align-items: center; }
+      h2 { font-size: 21px; }
+    }
+    @media (max-width: 370px) {
+      .brand { font-size: 10px; }
+      .section-date { max-width: 125px; }
+      .photos { height: 170px; }
+      .price { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">A</span><span>JAPAN PLANNER <span style="font-weight:450">BY ANYA</span></span></div>
+      <div class="top-note" data-i18n="headerNote">TOKYO · RESTAURANT GUIDE</div>
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="languageLabel">
+        <button type="button" data-language="th" aria-pressed="true">ไทย</button>
+        <button type="button" data-language="ja" aria-pressed="false">日本語</button>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow" data-i18n="eyebrow">YOUR JAPAN JOURNEY</div>
+      <h1 id="page-title" data-i18n="pageTitle">เอกสารร้านอาหาร</h1>
+      <p class="hero-copy" data-i18n="heroCopy">รวมร้านและคำแนะนำเรื่องอาหารจากแผนเที่ยวโตเกียว เปิดดูรายละเอียด คะแนน ราคาโดยประมาณ และเส้นทางได้จากหน้านี้</p>
+      <div class="hero-foot"><strong data-i18n="recommendationCount">7 คำแนะนำ</strong><span class="dot"></span><span data-i18n="dayCount">4 วัน</span><span class="dot"></span><span data-i18n="city">Tokyo</span></div>
+    </section>
+
+    <div class="controls">
+      <div class="control-inner">
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.3 4.3"></path></svg>
+          <input id="search" type="search" placeholder="ค้นหาร้านหรือเมนู" aria-label="ค้นหาร้านหรือเมนู" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchPlaceholder">
+        </label>
+        <nav class="quick-links" aria-label="ไปยังคำแนะนำ" data-i18n-aria="quickLinksLabel">
+          <a href="#day-1" data-i18n="navDay1">10 ต.ค.</a><a href="#day-2" data-i18n="navDay2">11 ต.ค.</a><a href="#day-3" data-i18n="navDay3">13 ต.ค.</a><a href="#day-4" data-i18n="navDay4">14 ต.ค.</a>
+        </nav>
+      </div>
+    </div>
+
+    <main id="recommendations">
+      <section class="day-section" id="day-1">
+        <div class="section-head"><div><p class="section-kicker" data-i18n="day1Kicker">DAY 01 · SATURDAY</p><h2 data-i18n="day1Date">10 October 2026</h2></div><div class="section-date" data-i18n="day1Activity">Tokyo sightseeing</div></div>
+        <div class="restaurant-grid">
+          <article class="restaurant-card" data-search="麺屋芝乃 menya shibano ramen niboshi chuka soba noko shibakoen โตเกียว ราเมง">
+            <div class="photos"><img src="page-1-photo-1.jpg" alt="หน้าร้าน Menya Shibano" data-i18n-alt="altMenyaStore"><img src="page-1-photo-2.jpg" alt="ราเมงของ Menya Shibano" data-i18n-alt="altMenyaRamen"></div>
+            <div class="card-content">
+              <div class="name-row"><div><h3 class="name" data-i18n="menyaName">麺屋芝乃</h3><p class="name-en" data-i18n="menyaLatin">Menya Shibano</p></div><span class="price">¥800–1,100</span></div>
+              <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>4.0</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.49</b></span></div>
+              <p class="description" data-i18n="menyaDescription">ร้านราเมงขนาดเล็กใกล้ย่าน Shibakoen โดดเด่นด้วยเมนู Niboshi Chuka Soba และ Noko Niboshi Soba ที่ใช้น้ำซุปปลากะตักตากแห้งเข้มข้นกลมกล่อม หอมกลิ่นปลาแห้งชัดเจน จับคู่กับเส้นตรงนุ่มกำลังดี ในช่วงราคาประมาณ 800–1,100 เยน</p>
+              <div class="links"><a class="link-button" href="https://maps.app.goo.gl/uysH6BD7mBai3vQW8" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1314/A131401/13228157/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="day-section" id="day-2">
+        <div class="section-head"><div><p class="section-kicker" data-i18n="day2Kicker">DAY 02 · SUNDAY</p><h2 data-i18n="day2Date">11 October 2026</h2></div><div class="section-date" data-i18n="day2Activity">Disney</div></div>
+        <div class="restaurant-grid">
+          <article class="restaurant-card" data-search="つのはず食堂 tsunohazu shokudo tonkatsu set katsudon shinjuku washington hotel ศูนย์อาหาร">
+            <div class="photos"><img src="page-2-photo-1.jpg" alt="ทางเข้าร้าน Tsunohazu Shokudo" data-i18n-alt="altTsunohazuStore"><img src="page-2-photo-2.jpg" alt="ชุดอาหารทงคัตสึ" data-i18n-alt="altTonkatsu"></div>
+            <div class="card-content">
+              <div class="name-row"><div><h3 class="name" data-i18n="tsunohazuName">つのはず食堂</h3><p class="name-en" data-i18n="tsunohazuLatin">Tsunohazu Shokudo</p></div><span class="price">¥700–1,100</span></div>
+              <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>3.4</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.21</b></span></div>
+              <p class="description" data-i18n="tsunohazuDescription">ศูนย์อาหารสไตล์ญี่ปุ่นชั้น B1F ของโรงแรม Shinjuku Washington Hotel เหมาะสำหรับคนที่เดินทางกลับมาเหนื่อย ๆ แล้วอยากหาของอร่อยทานง่าย ๆ ร้านเปิดให้บริการถึง 22:00 น. แนะนำเมนูเซ็ตข้าวหน้าทงคัตสึและข้าวหน้าคัตสึด้ง ในราคาประมาณ 700–1,100 เยน</p>
+              <div class="detail-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z"></path><circle cx="12" cy="9" r="2"></circle></svg><span data-i18n="tsunohazuLocation">Shinjuku Washington Hotel ชั้น B1F · เปิดถึง 22:00 น.</span></div>
+              <div class="links"><a class="link-button" href="https://maps.app.goo.gl/GVzfoVfZf8FCyq3AA" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1304/A130401/13289860/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="day-section" id="day-3">
+        <div class="section-head"><div><p class="section-kicker" data-i18n="day3Kicker">DAY 03 · MONDAY</p><h2 data-i18n="day3Date">13 October 2026</h2></div><div class="section-date" data-i18n="day3Activity">Teamlab</div></div>
+        <div class="restaurant-grid">
+          <article class="restaurant-card" data-search="立ち寿司横丁 新宿西口 tachizushi yokocho shinjuku nishiguchi sushi omakase nigiri sushi ซูชิ">
+            <div class="photos"><img src="page-3-photo-1.jpg" alt="ซูชิ nigiri ของ Tachizushi Yokocho" data-i18n-alt="altTachizushiSushi"><img src="page-3-photo-2.jpg" alt="หน้าร้าน Tachizushi Yokocho Shinjuku Nishiguchi" data-i18n-alt="altTachizushiStore"></div>
+            <div class="card-content">
+              <div class="name-row"><div><h3 class="name" data-i18n="tachizushiName">立ち寿司横丁 新宿西口</h3><p class="name-en" data-i18n="tachizushiLatin">Tachizushi Yokocho Shinjuku Nishiguchi</p></div><span class="price">¥1,050–1,150</span></div>
+              <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>4.3</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.44</b></span></div>
+              <p class="description" data-i18n="tachizushiDescription">ร้านซูชิปั้นสดคุณภาพเยี่ยมย่าน Shinjuku Nishiguchi แนะนำมื้อกลางวันชุด Omakase 1.5 人前 รวมซูชิสดใหม่ 12 คำพร้อมซุปมิโสะ หากเลือกรอบยืนทานจะได้รับส่วนลด 100 เยน เหลือประมาณ 1,050 เยน (ถ้านั่งทานประมาณ 1,150 เยน)</p>
+              <div class="detail-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z"></path><circle cx="12" cy="9" r="2"></circle></svg><span data-i18n="tachizushiLocation">อยู่ตามทางมุ่งหน้าไปสถานี Shinjuku</span></div>
+              <div class="menu-note" data-i18n="tachizushiMenu"><strong>เมนูแนะนำ</strong> · วันธรรมดา: Omakase 1.5 人前 ¥1,050 · Marutoku Nigiri ¥900</div>
+              <div class="links"><a class="link-button" href="https://maps.app.goo.gl/1z2nrq2DWEL7ANHx7" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1304/A130401/13222849/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+            </div>
+          </article>
+
+          <article class="restaurant-card" data-search="都の銘茶 茶の池田や miyako no meicha cha no ikedaya ชา มัทฉะ ซอฟต์ครีม">
+          <div class="photos single"><img src="page-4-photo-1.jpg" alt="ซอฟต์ครีมชาเขียวจากภาพในเอกสาร" data-i18n-alt="altIkedayaImage"></div>
+          <div class="card-content">
+          <div class="name-row"><div><h3 class="name" data-i18n="ikedayaName">都の銘茶 茶の池田や</h3><p class="name-en" data-i18n="ikedayaLatin">Miyako no Meicha Cha no Ikedaya</p></div></div>
+          <div class="links"><a class="link-button" href="https://maps.app.goo.gl/ksKa5paRCUmidPYT7" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a></div>
+          </div>
+          </article>
+          <article class="restaurant-card" data-search="あるでん亭 新宿センタービル店 arudentei shinjuku center building pasta loren carbonara พาสต้า">
+          <div class="photos"><img src="page-5-photo-1.jpg" alt="เมนูพาสต้าของ Arudentei" data-i18n-alt="altArudenteiPasta"><img src="page-5-photo-2.jpg" alt="หน้าร้าน Arudentei Shinjuku Center Building" data-i18n-alt="altArudenteiStore"></div>
+          <div class="card-content">
+
+          <div class="name-row"><div><h3 class="name" data-i18n="arudenteiName">あるでん亭 新宿センタービル店</h3><p class="name-en" data-i18n="arudenteiLatin">Arudentei Shinjuku Center Building</p></div><span class="price">¥1,000–1,600</span></div>
+          <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>4.2</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.49</b></span></div>
+          <p class="description" data-i18n="arudenteiDescription">ร้านพาสต้าอิตาเลียน-ญี่ปุ่นระดับตำนานย่าน Nishi-Shinjuku ขึ้นชื่อเรื่องการต้มเส้นให้ได้ระดับ Al Dente แท้ ๆ แนะนำเมนูซิกเนเจอร์ Loren พาสต้าผัดซอสโชยุสูตรพิเศษใส่เบคอนและไข่ดาว หรือคาร์โบนาราสไตล์อิตาเลียนแท้ ในช่วงราคาประมาณ 1,000–1,600 เยน</p>
+          <div class="detail-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z"></path><circle cx="12" cy="9" r="2"></circle></svg><span data-i18n="arudenteiLocation">Shinjuku Center Building ชั้น MB1F · อยู่ระหว่างทางกลับโรงแรม</span></div>
+          <div class="links"><a class="link-button" href="https://maps.app.goo.gl/tf4pb5MTVkGmLtrP6" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1304/A130401/13006745/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+          </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="day-section" id="day-4">
+        <div class="section-head"><div><p class="section-kicker" data-i18n="day4Kicker">DAY 04 · TUESDAY</p><h2 data-i18n="day4Date">14 October 2026</h2></div><div class="section-date" data-i18n="day4Activity">Harry Potter</div></div>
+        <div class="restaurant-grid">
+          <article class="restaurant-card" data-search="ティーヌンキッチン 西新宿店 tinun kitchen nishi shinjuku thai tom yum goong ramen gapao kao man gai อาหารไทย ต้มยำ กะเพรา">
+            <div class="photos"><img src="page-6-photo-1.jpg" alt="หน้าร้าน Tinun Kitchen Nishi-Shinjuku" data-i18n-alt="altTinunStore"><img src="page-6-photo-2.jpg" alt="อาหารของ Tinun Kitchen" data-i18n-alt="altTinunFood"></div>
+            <div class="card-content">
+              <div class="name-row"><div><h3 class="name" data-i18n="tinunName">ティーヌンキッチン 西新宿店</h3><p class="name-en" data-i18n="tinunLatin">Tinun Kitchen Nishi-Shinjuku</p></div><span class="price">¥900–1,200</span></div>
+              <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>3.9</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.08</b></span></div>
+              <p class="description" data-i18n="tinunDescription">ร้านอาหารไทยรสชาติอร่อยชื่อดังระดับตำนานในย่าน Nishi-Shinjuku โดดเด่นด้วยเมนูบุกเบิกอย่างต้มยำกุ้งราเมง (Tom Yum Goong Ramen) พร้อมเมนูไทยยอดนิยมอย่างกะเพราและข้าวมันไก่ ในราคาประมาณ 900–1,200 เยน หากต้องการทานเผ็ด สามารถบอกทางร้านได้เลย</p>
+              <div class="links"><a class="link-button" href="https://maps.app.goo.gl/35H6dvvTZadfZQrc7" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1304/A130401/13161198/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+            </div>
+          </article>
+
+          <article class="restaurant-card" data-search="新宿 鮨 つむぎ shinjuku sushi tsumugi omakase course 12980 23 courses all you can drink ซูชิ">
+          <div class="photos"><img src="page-7-photo-1.jpg" alt="หน้าร้าน Shinjuku Sushi Tsumugi" data-i18n-alt="altTsumugiStore"><img src="page-7-photo-2.jpg" alt="ซูชิของ Shinjuku Sushi Tsumugi" data-i18n-alt="altTsumugiSushi"></div>
+          <div class="card-content">
+
+          <div class="name-row"><div><h3 class="name" data-i18n="tsumugiName">新宿 鮨 つむぎ</h3><p class="name-en" data-i18n="tsumugiLatin">Shinjuku Sushi Tsumugi</p></div><span class="price">¥12,980</span></div>
+          <div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>3.9</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.40</b></span></div>
+          <p class="description" data-i18n="tsumugiDescription">ร้านซูชิเอโดะมาเอะพรีเมียมย่าน Shinjuku แนะนำคอร์ส Omakase ราคา 12,980 เยน (รวมภาษี) เสิร์ฟจัดเต็ม 23 เมนู มีทั้งซูชินิกิริ วัตถุดิบตามฤดูกาล และเครื่องดื่มไม่อั้น เหมาะกับมื้อพิเศษและบรรยากาศดี ๆ</p>
+          <div class="detail-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.3 7-12a7 7 0 1 0-14 0c0 6.7 7 12 7 12Z"></path><circle cx="12" cy="9" r="2"></circle></svg><span data-i18n="tsumugiLocation">Shinjuku Kokusai-dori Building ชั้น 3 · ¥12,980 รวมภาษี</span></div>
+          <div class="links"><a class="link-button" href="https://maps.app.goo.gl/9kYYNd5bE6TAgiEQ6" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Google Maps ↗</a><a class="link-button" href="https://tabelog.com/tokyo/A1304/A130401/13254500/" target="_blank" rel="noreferrer">Tabelog ↗</a></div>
+          </div>
+          </article>
+        </div>
+      </section>
+
+      <p class="empty" id="empty" data-i18n="empty">ไม่พบร้านหรือเมนูที่ค้นหา</p>
+    </main>
+
+    <footer><strong>JAPAN PLANNER BY ANYA</strong></footer>
+  </div>
+  <script>
+    const search = document.querySelector('#search');
+    const cards = [...document.querySelectorAll('.restaurant-card')];
+    const sections = [...document.querySelectorAll('.day-section')];
+    const empty = document.querySelector('#empty');
+    const translations = {
+      th: {
+        headerNote: 'TOKYO · RESTAURANT GUIDE', eyebrow: 'YOUR JAPAN JOURNEY', pageTitle: 'เอกสารร้านอาหาร',
+        menyaName: 'Menya Shibano', menyaLatin: '麺屋芝乃',
+        tsunohazuName: 'Tsunohazu Shokudo', tsunohazuLatin: 'つのはず食堂',
+        tachizushiName: 'Tachizushi Yokocho Shinjuku Nishiguchi', tachizushiLatin: '立ち寿司横丁 新宿西口',
+        ikedayaName: 'Miyako no Meicha Cha no Ikedaya', ikedayaLatin: '都の銘茶 茶の池田や',
+        arudenteiName: 'Arudentei Shinjuku Center Building', arudenteiLatin: 'あるでん亭 新宿センタービル店',
+        tinunName: 'Tinun Kitchen Nishi-Shinjuku', tinunLatin: 'ティーヌンキッチン 西新宿店',
+        tsumugiName: 'Shinjuku Sushi Tsumugi', tsumugiLatin: '新宿 鮨 つむぎ',
+        heroCopy: 'รวมร้านและคำแนะนำเรื่องอาหารจากแผนเที่ยวโตเกียว เปิดดูรายละเอียด คะแนน ราคาโดยประมาณ และเส้นทางได้จากหน้านี้',
+        recommendationCount: '7 คำแนะนำ', dayCount: '4 วัน', city: 'Tokyo', searchPlaceholder: 'ค้นหาร้านหรือเมนู', quickLinksLabel: 'ไปยังคำแนะนำ',
+        navDay1: '10 ต.ค.', navDay2: '11 ต.ค.', navDay3: '13 ต.ค.', navDay4: '14 ต.ค.',
+        day1Kicker: 'DAY 01 · SATURDAY', day1Date: '10 October 2026', day1Activity: 'Tokyo sightseeing',
+        day2Kicker: 'DAY 02 · SUNDAY', day2Date: '11 October 2026', day2Activity: 'Disney',
+        day3Kicker: 'DAY 03 · MONDAY', day3Date: '13 October 2026', day3Activity: 'Teamlab',
+        day4Kicker: 'DAY 04 · TUESDAY', day4Date: '14 October 2026', day4Activity: 'Harry Potter',
+        menyaDescription: 'ร้านราเมงขนาดเล็กใกล้ย่าน Shibakoen โดดเด่นด้วยเมนู Niboshi Chuka Soba และ Noko Niboshi Soba ที่ใช้น้ำซุปปลากะตักตากแห้งเข้มข้นกลมกล่อม หอมกลิ่นปลาแห้งชัดเจน จับคู่กับเส้นตรงนุ่มกำลังดี ในช่วงราคาประมาณ 800–1,100 เยน',
+        tsunohazuDescription: 'ศูนย์อาหารสไตล์ญี่ปุ่นชั้น B1F ของโรงแรม Shinjuku Washington Hotel เหมาะสำหรับคนที่เดินทางกลับมาเหนื่อย ๆ แล้วอยากหาของอร่อยทานง่าย ๆ ร้านเปิดให้บริการถึง 22:00 น. แนะนำเมนูเซ็ตข้าวหน้าทงคัตสึและข้าวหน้าคัตสึด้ง ในราคาประมาณ 700–1,100 เยน',
+        tsunohazuLocation: 'Shinjuku Washington Hotel ชั้น B1F · เปิดถึง 22:00 น.',
+        tachizushiDescription: 'ร้านซูชิปั้นสดคุณภาพเยี่ยมย่าน Shinjuku Nishiguchi แนะนำมื้อกลางวันชุด Omakase 1.5 人前 รวมซูชิสดใหม่ 12 คำพร้อมซุปมิโสะ หากเลือกรอบยืนทานจะได้รับส่วนลด 100 เยน เหลือประมาณ 1,050 เยน (ถ้านั่งทานประมาณ 1,150 เยน)',
+        tachizushiLocation: 'อยู่ตามทางมุ่งหน้าไปสถานี Shinjuku',
+        tachizushiMenu: '<strong>เมนูแนะนำ</strong> · วันธรรมดา: Omakase 1.5 人前 ¥1,050 · Marutoku Nigiri ¥900',
+        arudenteiDescription: 'ร้านพาสต้าอิตาเลียน-ญี่ปุ่นระดับตำนานย่าน Nishi-Shinjuku ขึ้นชื่อเรื่องการต้มเส้นให้ได้ระดับ Al Dente แท้ ๆ แนะนำเมนูซิกเนเจอร์ Loren พาสต้าผัดซอสโชยุสูตรพิเศษใส่เบคอนและไข่ดาว หรือคาร์โบนาราสไตล์อิตาเลียนแท้ ในช่วงราคาประมาณ 1,000–1,600 เยน',
+        arudenteiLocation: 'Shinjuku Center Building ชั้น MB1F · อยู่ระหว่างทางกลับโรงแรม',
+        tinunDescription: 'ร้านอาหารไทยรสชาติอร่อยชื่อดังระดับตำนานในย่าน Nishi-Shinjuku โดดเด่นด้วยเมนูบุกเบิกอย่างต้มยำกุ้งราเมง (Tom Yum Goong Ramen) พร้อมเมนูไทยยอดนิยมอย่างกะเพราและข้าวมันไก่ ในราคาประมาณ 900–1,200 เยน หากต้องการทานเผ็ด สามารถบอกทางร้านได้เลย',
+        tsumugiDescription: 'ร้านซูชิเอโดะมาเอะพรีเมียมย่าน Shinjuku แนะนำคอร์ส Omakase ราคา 12,980 เยน (รวมภาษี) เสิร์ฟจัดเต็ม 23 เมนู มีทั้งซูชินิกิริ วัตถุดิบตามฤดูกาล และเครื่องดื่มไม่อั้น เหมาะกับมื้อพิเศษและบรรยากาศดี ๆ',
+        tsumugiLocation: 'Shinjuku Kokusai-dori Building ชั้น 3 · ¥12,980 รวมภาษี',
+        empty: 'ไม่พบร้านหรือเมนูที่ค้นหา',
+        languageLabel: 'เลือกภาษา',
+        altMenyaStore: '麺屋芝乃の外観',
+        altMenyaRamen: '麺屋芝乃のラーメン',
+        altTsunohazuStore: 'つのはず食堂の入口',
+        altTonkatsu: 'とんかつ定食',
+        altTachizushiSushi: '立ち寿司横丁の握り寿司',
+        altTachizushiStore: '立ち寿司横丁 新宿西口の外観',
+        altIkedayaImage: '茶の池田やの抹茶ソフトクリーム',
+        altArudenteiPasta: 'あるでん亭のパスタ',
+        altArudenteiStore: 'あるでん亭 新宿センタービル店の外観',
+        altTinunStore: 'ティーヌンキッチン 西新宿店の外観',
+        altTinunFood: 'ティーヌンキッチンの料理',
+        altTsumugiStore: '新宿 鮨 つむぎの外観',
+        altTsumugiSushi: '新宿 鮨 つむぎの寿司',
+      },
+      ja: {
+        headerNote: '東京 · レストランガイド', eyebrow: '日本旅行のレストラン案内', pageTitle: 'レストラン案内',
+        menyaName: '麺屋芝乃', menyaLatin: 'Menya Shibano',
+        tsunohazuName: 'つのはず食堂', tsunohazuLatin: 'Tsunohazu Shokudo',
+        tachizushiName: '立ち寿司横丁 新宿西口', tachizushiLatin: 'Tachizushi Yokocho Shinjuku Nishiguchi',
+        ikedayaName: '都の銘茶 茶の池田や', ikedayaLatin: 'Miyako no Meicha Cha no Ikedaya',
+        arudenteiName: 'あるでん亭 新宿センタービル店', arudenteiLatin: 'Arudentei Shinjuku Center Building',
+        tinunName: 'ティーヌンキッチン 西新宿店', tinunLatin: 'Tinun Kitchen Nishi-Shinjuku',
+        tsumugiName: '新宿 鮨 つむぎ', tsumugiLatin: 'Shinjuku Sushi Tsumugi',
+        heroCopy: '東京旅行中に立ち寄れるレストランをまとめました。各店の詳細、評価、価格帯、地図をご覧いただけます。',
+        recommendationCount: 'おすすめ 7軒', dayCount: '4日間', city: '東京', searchPlaceholder: '店名やメニューを検索', quickLinksLabel: '日付から選ぶ',
+        navDay1: '10月10日', navDay2: '10月11日', navDay3: '10月13日', navDay4: '10月14日',
+        day1Kicker: '1日目 · 土曜日', day1Date: '2026年10月10日', day1Activity: '東京観光',
+        day2Kicker: '2日目 · 日曜日', day2Date: '2026年10月11日', day2Activity: 'ディズニー',
+        day3Kicker: '3日目 · 月曜日', day3Date: '2026年10月13日', day3Activity: 'チームラボ',
+        day4Kicker: '4日目 · 火曜日', day4Date: '2026年10月14日', day4Activity: 'ハリー・ポッター',
+        menyaDescription: '芝公園近くの小さなラーメン店。煮干し中華そばと濃厚煮干しそばが看板メニューです。煮干しの旨みがしっかり感じられる、濃厚でまろやかなスープに、ほどよい柔らかさのストレート麺がよく合います。価格帯は約800〜1,100円です。',
+        tsunohazuDescription: '新宿ワシントンホテルB1Fにある日本式フードコートです。ホテルに戻った後、気軽に食事をしたい方に便利で、22:00まで営業しています。おすすめはとんかつ定食とカツ丼。価格帯は約700〜1,100円です。',
+        tsunohazuLocation: '新宿ワシントンホテル B1F · 22:00まで営業',
+        tachizushiDescription: '新宿西口エリアにある、新鮮な寿司を楽しめるお店です。ランチには「おまかせ1.5人前握り」がおすすめ。新鮮な寿司12貫と味噌汁が付いています。立ち食いを選ぶと100円引きで約1,050円、着席の場合は約1,150円です。',
+        tachizushiLocation: '新宿駅へ向かう道沿いにあります',
+        tachizushiMenu: '<strong>おすすめメニュー</strong> · 平日限定：おまかせ1.5人前 ¥1,050 · まる得にぎり ¥900',
+        arudenteiDescription: '西新宿の老舗、イタリアンと日本の味を組み合わせたパスタ専門店です。絶妙なアルデンテの麺が自慢。特製しょうゆソースにベーコンと目玉焼きを合わせた看板メニュー「ロレン」や、本格イタリアンスタイルのカルボナーラがおすすめです。価格帯は約1,000〜1,600円です。',
+        arudenteiLocation: '新宿センタービル MB1F · ホテルへ戻る途中にあります',
+        tinunDescription: '西新宿で人気のタイ料理店です。元祖「トムヤムクンラーメン」をはじめ、ガパオライスやカオマンガイなどの定番タイ料理を約900〜1,200円で楽しめます。辛さを希望する場合は、お店にお伝えください。',
+        tsumugiDescription: '新宿で本格的な江戸前鮨を楽しめる高級店です。おすすめは、税込12,980円の飲み放題付きおまかせコース。旬の食材を使った握りや一品料理など、全23品をお楽しみいただけます。',
+        tsumugiLocation: '西新宿国際通りビル 3F · ¥12,980（税込）',
+        empty: '該当するお店やメニューが見つかりません',
+        languageLabel: '言語を選択',
+        altMenyaStore: '麺屋芝乃の外観',
+        altMenyaRamen: '麺屋芝乃のラーメン',
+        altTsunohazuStore: 'つのはず食堂の入口',
+        altTonkatsu: 'とんかつ定食',
+        altTachizushiSushi: '立ち寿司横丁の握り寿司',
+        altTachizushiStore: '立ち寿司横丁 新宿西口の外観',
+        altIkedayaImage: '茶の池田やの抹茶ソフトクリーム',
+        altArudenteiPasta: 'あるでん亭のパスタ',
+        altArudenteiStore: 'あるでん亭 新宿センタービル店の外観',
+        altTinunStore: 'ティーヌンキッチン 西新宿店の外観',
+        altTinunFood: 'ティーヌンキッチンの料理',
+        altTsumugiStore: '新宿 鮨 つむぎの外観',
+        altTsumugiSushi: '新宿 鮨 つむぎの寿司',
+      }
+    };
+    function setLanguage(language) {
+      const messages = translations[language];
+      document.documentElement.lang = language;
+      document.title = language === 'ja' ? 'レストラン案内 | Japan Planner by Anya' : 'เอกสารร้านอาหาร | Japan Planner by Anya';
+      document.querySelector('#page-description').content = language === 'ja'
+        ? 'Japan Planner by Anyaがおすすめする、東京旅行のレストラン案内です。'
+        : 'ร้านอาหารและคำแนะนำที่คัดจากเอกสารทริปญี่ปุ่น โดย Japan Planner by Anya';
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const value = messages[element.dataset.i18n];
+        if (value !== undefined) element.innerHTML = value;
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        element.placeholder = messages[element.dataset.i18nPlaceholder];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+        element.setAttribute('aria-label', messages[element.dataset.i18nAria]);
+      });
+      document.querySelectorAll('[data-language]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === language));
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(image => {
+        image.alt = messages[image.dataset.i18nAlt];
+      });
+      try { localStorage.setItem('anya-itinerary-language', language); } catch (_) {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    let savedLanguage = 'th';
+    try { savedLanguage = localStorage.getItem('anya-itinerary-language') || 'th'; } catch (_) {}
+    setLanguage(savedLanguage);
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLocaleLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const match = !query || `${card.dataset.search} ${card.textContent}`.toLocaleLowerCase().includes(query);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      sections.forEach(section => { section.hidden = !section.querySelector('.restaurant-card:not([hidden])'); });
+      empty.style.display = visible ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
